@@ -11,8 +11,9 @@
 
       <!-- Aqui será renderizado todas as páginas do SPA -->
       <div class="pages">
-
-</div>
+        <p>SPA</p>
+        <p>SPA</p>
+      </div>
     </div>
   </div>
 </template>
