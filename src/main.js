@@ -16,7 +16,11 @@ import {
 
 import LoginComponent from './pages/Login/LoginComponent'
 import HomeComponent from './pages/Home/HomeComponent'
+import ProductsComponent from './pages/Products/ProductsComponent'
 
+/* Inicio das rotas */
+/* Geralmente se cria um "arquivo de rotas" */
+/* Constante das rotas */
 const routes = [{
   path: '/',
   name: 'login', //localhost:8080
@@ -26,8 +30,14 @@ const routes = [{
   path: '/home',
   name: 'home', //localhost:8080/home
   component: HomeComponent
+},
+{
+  path: '/produtos',
+  name: 'products', //localhost:8080/produtos
+  component: ProductsComponent
 }
 ]
+/* Fim das rotas */
 
 const router = createRouter({
   history: createWebHashHistory(),

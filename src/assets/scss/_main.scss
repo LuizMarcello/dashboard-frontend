@@ -6,3 +6,13 @@
   height: 100vh;
   font-family: "roboto", "sans-serif";
 }
+
+/* Aqui, esta classe do "HomeComponent" e "ProductsComponent" não pegou */
+.content-pages {
+  padding: 15px;
+}
+.title_pages {
+  p {
+    font-size: 25px;
+  }
+}

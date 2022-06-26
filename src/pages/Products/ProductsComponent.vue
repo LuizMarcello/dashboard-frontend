@@ -4,7 +4,7 @@
     <template v-slot:slot-pages>
       <div class="content-pages">
         <header class="title_pages">
-          <p>Inicio</p>
+          <p>Produtos</p>
         </header>
       </div>
       <div>
@@ -19,7 +19,7 @@ import DashboardComponent from "../Dashboard/DashboardComponent";
 import CardsComponent from "../../components/CardsComponent";
 
 export default {
-  name: "HomeComponent",
+  name: "ProductsComponent",
   components: {
     DashboardComponent,
     CardsComponent,

@@ -11,8 +11,8 @@
 
       <!-- Aqui será renderizado todas as páginas do SPA -->
       <div class="pages">
-        <p>SPA</p>
-        <p>SPA</p>
+        <!-- Usando slot nomeado -->
+        <slot name="slot-pages"></slot>
       </div>
     </div>
   </div>
