@@ -1,7 +1,10 @@
 <template>
   <div class="lists">
     <div class="top">
-      <p><strong>Clientes</strong></p>
+      <p>
+        <strong>{{ descriptionnn }}</strong>
+        <span class="badge badge-info"> {{ dataaa.length }}</span>
+      </p>
     </div>
 
     <div class="content">
@@ -9,13 +12,13 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Nome</th>
-            <th scope="col">E-mail</th>
+            <th scope="col">{{ columnsss[0] }}</th>
+            <th scope="col">{{ columnsss[1]}}</th>
             <!-- <th scope="col">Telefone</th> -->
           </tr>
         </thead>
         <tbody>
-          <tr v-for="user in usersss" :key="user.id">
+          <tr v-for="user in dataaa" :key="user.id">
             <th scope="row">
               <p class="users">
                 {{ user.id }}
@@ -31,7 +34,7 @@
                 {{ user.email }}
               </p>
             </td>
-           <!--  <td>
+            <!--  <td>
               <p class="users">
                 {{ user.phone }}
               </p>
@@ -47,7 +50,10 @@
 export default {
   name: "ListsComponent",
   props: {
-    usersss: Array,
+    dataaa: Array,
+    descriptionnn: String,
+    /* Um array */
+    columnsss: [],
   },
 };
 </script>

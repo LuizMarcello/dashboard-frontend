@@ -48,7 +48,23 @@
       <div class="container mt-5">
         <div class="row">
           <div class="col-12 col-md-6">
-            <lists-component :usersss="users" />
+            <!--  <lists-component :dataaa="users" :descriptionnn="'Clientes'" /> -->
+            <!-- ou assim, sem o v-bind(:) , porquê neste caso, está enviando apenas uma string -->
+            <lists-component
+              :dataaa="users"
+              descriptionnn="Clientes"
+              :columnsss="['Nome', 'E-mail']"
+            />
+          </div>
+          <div class="col-12 col-md-6">
+            <!-- <lists-component :dataaa="users" :descriptionnn="'Produtos'" -->
+            <!-- ou assim, sem o v-bind(:), porque neste caso, está enviando apenas uma string -->
+            <lists-component
+              :dataaa="users"
+              descriptionnn="Produtos"
+              :columnsss="['Nome', 'Valor']"
+            />
+            />
           </div>
         </div>
       </div>
@@ -57,6 +73,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import DashboardComponent from "../Dashboard/DashboardComponent";
 import CardsComponent from "../../components/CardsComponent";
 import ListsComponent from "../../components/ListsComponent";
