@@ -34,7 +34,7 @@ const routes = [{
   },
   {
     path: '/clients',
-    name: 'clients', //localhost:8080/home
+    name: 'clients', //localhost:8080/clients
     component: ClientsComponent
   },
   {

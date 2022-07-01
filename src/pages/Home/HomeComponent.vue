@@ -102,9 +102,16 @@ export default {
        cliente http axios, e somente depois continua */
     async getUsers() {
       /* url da API */
-      const response = await axios.get("https://jsonplaceholder.typicode.com/users");
-      if (response.status == 200) {
-        this.users = response.data;
+      const response1 = await axios.get("https://jsonplaceholder.typicode.com/users");
+      if (response1.status == 200) {
+        this.users = response1.data;
+      } else {
+        console.error("Ocorreu um êrro na API");
+      }
+
+      const response2 = await axios.get("http://localhost:8000/api/");
+      if (response2.status == 200) {
+        console.log(response2.data);
       } else {
         console.error("Ocorreu um êrro na API");
       }

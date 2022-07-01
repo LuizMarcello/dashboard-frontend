@@ -53,7 +53,7 @@ export default {
     dataaa: Array,
     descriptionnn: String,
     /* Um array */
-    columnsss: [],
+    columnsss: {},
   },
 };
 </script>
