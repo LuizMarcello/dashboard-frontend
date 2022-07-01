@@ -19,6 +19,11 @@
           >
         </li>
         <li>
+          <router-link :to="{ name: 'clients' }"
+            ><i class="fa fa-home"></i> Clientes</router-link
+          >
+        </li>
+        <li>
           <router-link :to="{ name: 'products' }"
             ><i class="fa fa-box"></i> Produtos</router-link
           >
