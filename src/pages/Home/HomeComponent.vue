@@ -15,7 +15,7 @@
               :type="'Clientes'"
               :percentage="'7%'"
               :icon="'fa-users'"
-              :qtd="'7590'"
+              :qtd="clients.length"
             />
           </div>
           <div class="col-12 col-md-3">
@@ -23,7 +23,7 @@
               :type="'Produtos'"
               :percentage="'12%'"
               :icon="'fa-box'"
-              :qtd="'350'"
+              :qtd="products.length"
             />
           </div>
           <div class="col-12 col-md-3">
@@ -31,7 +31,7 @@
               :type="'Serviços'"
               :percentage="'3%'"
               :icon="'fa-store'"
-              :qtd="'270'"
+              :qtd="270"
             />
           </div>
           <div class="col-12 col-md-3">
@@ -39,7 +39,7 @@
               :type="'Relatórios'"
               :percentage="'25%'"
               :icon="'fa-chart-bar'"
-              :qtd="'30'"
+              :qtd="30"
             />
           </div>
         </div>
@@ -51,7 +51,7 @@
             <!--  <lists-component :dataaa="users" :descriptionnn="'Clientes'" /> -->
             <!-- ou assim, sem o v-bind(:) , porquê neste caso, está enviando apenas uma string -->
             <lists-component
-              :dataaa="users"
+              :dataaa="clients"
               descriptionnn="Clientes"
               :columnsss="['Nome', 'E-mail']"
             />
@@ -60,10 +60,9 @@
             <!-- <lists-component :dataaa="users" :descriptionnn="'Produtos'" -->
             <!-- ou assim, sem o v-bind(:), porque neste caso, está enviando apenas uma string -->
             <lists-component
-              :dataaa="users"
+              :dataaa="products"
               descriptionnn="Produtos"
               :columnsss="['Nome', 'Valor']"
-            />
             />
           </div>
         </div>
@@ -89,7 +88,8 @@ export default {
   data() {
     return {
       /* Um objeto array */
-      users: [],
+      clients: [],
+      products: [],
     };
   },
   /* hook(ciclo de vida) "mounted" */
@@ -101,17 +101,12 @@ export default {
        Espera por completo até terminar a busca na API feita pelo
        cliente http axios, e somente depois continua */
     async getUsers() {
-      /* url da API */
-      const response1 = await axios.get("https://jsonplaceholder.typicode.com/users");
-      if (response1.status == 200) {
-        this.users = response1.data;
-      } else {
-        console.error("Ocorreu um êrro na API");
-      }
-
-      const response2 = await axios.get("http://localhost:8000/api/");
-      if (response2.status == 200) {
-        console.log(response2.data);
+      /* Somente a barra, porque para esta API (local)
+         foi criada uma URL padrão, em main.js */
+      let response = await axios.get("/");
+      if (response.status == 200) {
+        this.clients = response.data.clienttts;
+        this.products = response.data.producttts;
       } else {
         console.error("Ocorreu um êrro na API");
       }

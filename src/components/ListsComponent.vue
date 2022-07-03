@@ -3,7 +3,8 @@
     <div class="top">
       <p>
         <strong>{{ descriptionnn }}</strong>
-        <span class="badge badge-info"> {{ dataaa.length }}</span>
+      
+        <span> - {{ dataaa.length }}</span>
       </p>
     </div>
 
@@ -13,25 +14,25 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">{{ columnsss[0] }}</th>
-            <th scope="col">{{ columnsss[1]}}</th>
+            <th scope="col">{{ columnsss[1] }}</th>
             <!-- <th scope="col">Telefone</th> -->
           </tr>
         </thead>
         <tbody>
-          <tr v-for="user in dataaa" :key="user.id">
+          <tr v-for="item in dataaa" :key="item.id">
             <th scope="row">
               <p class="users">
-                {{ user.id }}
+                {{ item.id }}
               </p>
             </th>
             <td>
               <p class="users">
-                {{ user.name }}
+                {{ item.name }}
               </p>
             </td>
             <td>
               <p class="users">
-                {{ user.email }}
+                {{ descriptionnn == "Clientes" ? item.email : item.value }}
               </p>
             </td>
             <!--  <td>

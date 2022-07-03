@@ -3,7 +3,7 @@ import {
 } from 'vue'
 
 import App from './App.vue'
-
+import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import '@fortawesome/fontawesome-free/css/all.css'
@@ -18,6 +18,9 @@ import LoginComponent from './pages/Login/LoginComponent'
 import HomeComponent from './pages/Home/HomeComponent'
 import ProductsComponent from './pages/Products/ProductsComponent'
 import ClientsComponent from './pages/Clients/ClientsComponent'
+
+/* Criando uma url padrão para uma das apis */
+axios.defaults.baseURL = "http://localhost:8000/api"
 
 /* Inicio das rotas */
 /* Geralmente se cria um "arquivo de rotas" */
