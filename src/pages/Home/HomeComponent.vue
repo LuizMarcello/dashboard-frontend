@@ -94,21 +94,22 @@ export default {
   },
   /* hook(ciclo de vida) "mounted" */
   mounted() {
-    this.getUsers();
+    this.getData();
   },
   methods: {
     /* Assíncrono "await", somente com função asyncrona "async"
        Espera por completo até terminar a busca na API feita pelo
        cliente http axios, e somente depois continua */
-    async getUsers() {
+    async getData() {
       /* Somente a barra, porque para esta API (local)
          foi criada uma URL padrão, em main.js */
-      let response = await axios.get("/");
-      if (response.status == 200) {
+      try {
+        let response = await axios.get("/");
+
         this.clients = response.data.clienttts;
         this.products = response.data.producttts;
-      } else {
-        console.error("Ocorreu um êrro na API");
+      } catch (error) {
+        console.error("Ocorreu um erro: status", error.response.status);
       }
     },
   },
